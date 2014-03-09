@@ -1,6 +1,6 @@
 TypeScript AMD Boilerplate
 ======================
-A AMD TypeScript Boilerplate.
+TypeScript AMD Boilerplate.
 
 
 ###GruntJS - Getting Started
