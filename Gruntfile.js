@@ -168,13 +168,13 @@ module.exports = function(grunt) {
          */
         typescript: {
             main: {
-                src: ['<%= DEVELOPMENT_PATH %>' + 'assets/scripts/TestApp.ts'],
-//                dest: '<%= PRODUCTION_PATH %>',
+                src: ['<%= DEVELOPMENT_PATH %>' + 'assets/scripts/AppBootstrap.ts'],
+                //dest: '<%= PRODUCTION_PATH %>',
                 options: {
                     target: 'es3', //or es5
                     module: 'AMD',
                     base_path: '',
-                    sourcemap: true,
+                    sourcemap: false,
                     declaration: false,
                     nolib: false,
                     comments: false

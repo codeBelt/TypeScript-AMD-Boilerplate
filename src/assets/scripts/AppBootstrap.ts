@@ -1,3 +1,8 @@
+/// <reference path="_declare/require.d.ts" />
+
+///<reference path='AppConfig.ts'/>
+///<reference path='TestApp.ts'/>
+
 /**
  * Main entry point for RequireJS
  */
@@ -6,10 +11,7 @@ require(
         'TestApp',
         'jquery'
     ],
-    function(
-        TestApp,
-        $
-    ) {
+    (TestApp, $) => {
         'use strict';
 
         $(document).ready(function () {
