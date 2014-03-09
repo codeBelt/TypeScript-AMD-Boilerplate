@@ -1,7 +1,6 @@
-TypeScript Boilerplate
+TypeScript AMD Boilerplate
 ======================
-A Grunt TypeScript Boilerplate and Workflow. Checkout the [TypeScript Boilerplate and Workflow Tutorial](http://www.codebelt.com/typescript/my-typescript-workflow-examples/).
-
+A AMD TypeScript Boilerplate.
 
 
 ###GruntJS - Getting Started
