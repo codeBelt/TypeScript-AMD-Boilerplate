@@ -1,6 +1,6 @@
-TypeScript AMD Boilerplate
+TypeScript AMD (Require.js) Boilerplate
 ======================
-TypeScript AMD Boilerplate.
+TypeScript AMD (Require.js) Boilerplate.
 
 
 ###GruntJS - Getting Started
