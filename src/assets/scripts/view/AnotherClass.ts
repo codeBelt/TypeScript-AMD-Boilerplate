@@ -5,7 +5,7 @@
  * @module namespace
  * @constructor
  **/
-class AnotherNamespaceClass {
+class AnotherClass {
 
     constructor() {
     }
@@ -22,4 +22,4 @@ class AnotherNamespaceClass {
 
 }
 
-export = AnotherNamespaceClass;
+export = AnotherClass;

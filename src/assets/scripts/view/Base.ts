@@ -1,3 +1,5 @@
+import $ = require("jquery");
+
 /**
  * YUIDoc_comment
  *

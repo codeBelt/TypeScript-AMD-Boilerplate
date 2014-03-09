@@ -9,8 +9,7 @@ var LoginTemplate:Function = require('hbs!templates/login/LoginTemplate');
 
 import TemplateFactory = require("util/TemplateFactory");
 import Base = require("view/Base");
-import AnotherNamespaceClass = require("view/AnotherNamespaceClass");
-import $ = require("jquery");
+import AnotherClass = require("view/AnotherClass");
 
 /**
  * YUIDoc_comment
@@ -22,7 +21,7 @@ import $ = require("jquery");
 class TestApp extends Base {
 
     private _title:string = 'TypeScript AMD Boilerplate';
-    private _anotherClass:AnotherNamespaceClass = null;
+    private _anotherClass:AnotherClass = null;
 
     constructor() {
         super();
@@ -38,7 +37,7 @@ class TestApp extends Base {
         template = LoginTemplate({title: this._title});
         this.addChild(template);
 
-        this._anotherClass = new AnotherNamespaceClass();
+        this._anotherClass = new AnotherClass();
         this._anotherClass.sayHi();
     }
 
