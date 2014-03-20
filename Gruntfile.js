@@ -173,7 +173,7 @@ module.exports = function(grunt) {
                 options: {
                     target: 'es3', //or es5
                     module: 'AMD',
-                    base_path: '',
+                    basePath: '',
                     sourcemap: false,
                     declaration: false,
                     nolib: false,
