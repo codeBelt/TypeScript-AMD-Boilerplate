@@ -1,6 +1,11 @@
 TypeScript AMD (Require.js) Boilerplate
 ======================
-TypeScript AMD (Require.js) Boilerplate.
+Here is the [TypeScript AMD with RequireJS Tutorial](http://www.codebelt.com/typescript/typescript-amd-with-requirejs-tutorial/) for these files.
+
+Also check out my preferred way of starting a TypeScript project which uses Internal Modules and not AMD: [TypeScript Boilerplate](https://github.com/codeBelt/TypeScript-Boilerplate)
+
+
+Be sure to check out all my [TypeScript tutorials and examples](http://www.codebelt.com/category/typescript/).
 
 
 ###GruntJS - Getting Started
