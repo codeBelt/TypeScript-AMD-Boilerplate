@@ -1,6 +1,6 @@
 /// <reference path="_declare/require.d.ts" />
 
-///<reference path='AppConfig.ts'/>
+///<reference path='config.ts'/>
 ///<reference path='TestApp.ts'/>
 
 /**

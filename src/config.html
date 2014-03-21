@@ -41,7 +41,14 @@
 
     </head>
     <body>
-        <script src="assets/vendor/require/require.js" data-main="assets/scripts/AppBootstrap.js"></script>
-        <script src="assets/scripts/AppConfig.js"></script>
+        <!-- @if NODE_ENV == 'DEVELOPMENT' -->
+        <script type="text/javascript" src="assets/vendor/require/require.js" data-main="assets/scripts/AppBootstrap.js"></script>
+        <script type="text/javascript" src="assets/scripts/config.js"></script>
+        <!-- @endif -->
+
+        <!-- @if NODE_ENV == 'PRODUCTION' -->
+        <script type="text/javascript" src="assets/vendor/require/require.js"></script>
+        <script type="text/javascript" src="assets/scripts/app.min.js"></script>
+        <!-- @endif -->
     </body>
 </html>
