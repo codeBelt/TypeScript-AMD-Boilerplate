@@ -94,6 +94,7 @@ module.exports = function(grunt) {
                 files: [
                     // Copy favicon.ico file from development to production
                     { expand: true, cwd: '<%= DEVELOPMENT_PATH %>', src: 'favicon.ico', dest: '<%= PRODUCTION_PATH %>' },
+                    { expand: true, cwd: '<%= DEVELOPMENT_PATH %>', src: 'assets/vendor/require/require.js', dest: '<%= PRODUCTION_PATH %>' },
                     // Copy the media folder from development to production
                     { expand: true, cwd: '<%= DEVELOPMENT_PATH %>', src: ['assets/media/**'], dest: '<%= PRODUCTION_PATH %>' },
                     // Copy the index.html file from development to production
@@ -305,6 +306,44 @@ module.exports = function(grunt) {
         },
 
         /**
+         * The RequireJS plugin that will use uglify2 to build and minify our JavaScript,
+         * templates and any other data we include in the require files.
+         */
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: '<%= DEVELOPMENT_PATH %>' + 'assets/scripts/',                         // Path of source scripts, relative to this build file
+                    mainConfigFile: '<%= DEVELOPMENT_PATH %>' + 'assets/scripts/config.js',         // Path of shared configuration file, relative to this build file
+                    name: 'AppBootstrap',                                                           // Name of input script (.js extension inferred)
+                    out: '<%= PRODUCTION_PATH %>' + 'assets/scripts/app.min.js',                    // Path of built script output
+
+                    fileExclusionRegExp: /.svn/,                                                    // Ignore all files matching this pattern
+                    useStrict: true,
+                    preserveLicenseComments: false,
+                    pragmas: {
+                        debugExclude: true
+                    },
+
+                    optimize: 'uglify2',                                                            // Use 'none' If you do not want to uglify.
+                    uglify2: {
+                        output: {
+                            beautify: false,
+                            comments: false
+                        },
+                        compress: {
+                            sequences: false,
+                            global_defs: {
+                                DEBUG: false
+                            }
+                        },
+                        warnings: false,
+                        mangle: true
+                    }
+                }
+            }
+        },
+
+        /**
          * Watches files and will run task(s) when files are changed. It will also reload/refresh the browser.
          */
         watch: {
@@ -337,6 +376,7 @@ module.exports = function(grunt) {
      * grunt        (Will build and run your development code/server)
      * grunt web    (Will build and run your production code/server)
      * grunt doc    (Will generate the YUI documentation from the code comments)
+     * grunt build  (Will build the production code but will not start a local server.)
      */
     grunt.registerTask('default', [
         'server'
@@ -352,27 +392,38 @@ module.exports = function(grunt) {
     grunt.registerTask('src', [
         'env:src',
         'preprocess:src',
+        'preprocess:js',
+        'json',
+        'handlebars',
         'typescript'
     ]);
 
     grunt.registerTask('web', [
-        'env:web',
-        'preprocess',
-        'typescript',
-        'clean',
-        'copy',
-        'useminPrepare', 'concat', 'uglify', 'cssmin',
-        'usemin',
-        'usebanner',
-        'htmlmin',
-        'manifest',
+        'build',
         'open:web',
         'express:web',
         'express-keepalive'
     ]);
 
+    grunt.registerTask('build', [
+        'env:web',
+        'preprocess',
+        'json',
+        'handlebars',
+        'typescript',
+        'clean',
+        'requirejs',
+        'copy',
+        'useminPrepare', 'concat', 'cssmin',
+        'usemin',
+        'usebanner',
+        'htmlmin',
+        'manifest'
+    ]);
+
     grunt.registerTask('doc', [
         'yuidoc'
     ]);
+
 
 };
