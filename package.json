@@ -1,13 +1,13 @@
 {
-    "name": "TypeScript-Grunt-Boilerplate",
+    "name": "TypeScript-AMD-Boilerplate",
     "version": "1.0.0",
 
     "appVersion": "0.1.0",
-    "description": "A TypeScript Boilerplate for Web Applications",
-    "url": "https://github.com/codeBelt/TypeScript-Boilerplate",
+    "description": "A TypeScript AMD (Require.js) Boilerplate for Web Applications",
+    "url": "https://github.com/codeBelt/TypeScript-AMD-Boilerplate",
     "repository": {
         "type" : "git" ,
-        "url" : "https://github.com/codeBelt/TypeScript-Boilerplate"
+        "url" : "https://github.com/codeBelt/TypeScript-AMD-Boilerplate"
     },
     "developedBy": "codeBelt",
 

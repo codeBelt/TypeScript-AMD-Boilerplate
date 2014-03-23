@@ -392,7 +392,6 @@ module.exports = function(grunt) {
     grunt.registerTask('src', [
         'env:src',
         'preprocess:src',
-        'preprocess:js',
         'json',
         'handlebars',
         'typescript'
