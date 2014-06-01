@@ -8,6 +8,7 @@ require.config({
     paths: {
         //main libraries
         jquery: '../vendor/jquery/jquery-1.9.1',
+        lodash: '../vendor/lodash/lodash',
 
         //shortcut paths
         templates: '../templates',
@@ -23,6 +24,9 @@ require.config({
     shim: {
         jquery: {
             exports: '$'
+        },
+        lodash: {
+            exports: '_'
         },
         Handlebars: {
             exports: 'Handlebars'
